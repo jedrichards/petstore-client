@@ -1,0 +1,44 @@
+.tagInput {
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: var(--ds-control-height-md);
+  padding: 5px var(--ds-space-2);
+}
+
+.input {
+  flex: 1 0 96px;
+  height: 24px;
+  padding: 0 var(--ds-space-1);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 24px;
+  padding: 0 2px 0 var(--ds-space-2);
+  background: var(--ds-color-accent-soft);
+  border-radius: var(--ds-radius-sm);
+  color: var(--ds-color-accent-text);
+  font-size: var(--ds-font-size-sm);
+  font-weight: var(--ds-font-weight-medium);
+}
+
+.remove {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.remove:hover {
+  background: var(--ds-color-accent-soft-hover);
+}

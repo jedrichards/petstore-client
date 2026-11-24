@@ -1,0 +1,27 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--ds-font-size-sm);
+  font-weight: var(--ds-font-weight-medium);
+  color: var(--ds-color-text);
+}
+
+.required {
+  margin-left: 2px;
+  color: var(--ds-color-danger);
+}
+
+.hint {
+  font-size: var(--ds-font-size-xs);
+  color: var(--ds-color-text-subtle);
+}
+
+.error {
+  font-size: var(--ds-font-size-xs);
+  color: var(--ds-color-danger-text);
+}

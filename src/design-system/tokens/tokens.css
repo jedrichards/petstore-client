@@ -1,0 +1,230 @@
+/*
+ * Design tokens.
+ *
+ * Primitives (palette, scale) come first. Semantic tokens map them to a role,
+ * and components read only the semantic tokens so a theme can swap them.
+ */
+
+:root {
+  /* Palette: neutral (cream paper to brown ink) */
+  --ds-neutral-0: #fffdf8;
+  --ds-neutral-50: #fbf5e9;
+  --ds-neutral-100: #f4ead6;
+  --ds-neutral-200: #e8d9bc;
+  --ds-neutral-300: #d6c19c;
+  --ds-neutral-400: #a8926f;
+  --ds-neutral-500: #7d6a4f;
+  --ds-neutral-600: #5f4f3a;
+  --ds-neutral-700: #46392a;
+  --ds-neutral-800: #2e251b;
+  --ds-neutral-900: #211a13;
+  --ds-neutral-950: #17120d;
+
+  /* Palette: brand (shop green) */
+  --ds-brand-50: #eef6ee;
+  --ds-brand-100: #d9ebdb;
+  --ds-brand-200: #b5d7ba;
+  --ds-brand-300: #86bb8f;
+  --ds-brand-400: #569a64;
+  --ds-brand-500: #3a7f4b;
+  --ds-brand-600: #2c6a3c;
+  --ds-brand-700: #245433;
+  --ds-brand-800: #1e432a;
+  --ds-brand-900: #183623;
+
+  /* Palette: shopfront (the awning and the chalkboard sign) */
+  --ds-awning-red: #c9463a;
+  --ds-awning-cream: #fff4dc;
+  --ds-chalkboard: #26352c;
+  --ds-chalk: #f6f0df;
+
+  /* Palette: status */
+  --ds-green-100: #dcf5e3;
+  --ds-green-500: #2c9a55;
+  --ds-green-700: #1c6b3a;
+  --ds-amber-100: #fdefc8;
+  --ds-amber-500: #d98e0b;
+  --ds-amber-700: #8a5a05;
+  --ds-red-100: #fde3e0;
+  --ds-red-500: #d6453b;
+  --ds-red-600: #b9342b;
+  --ds-red-700: #8f251e;
+  --ds-blue-100: #dfeafd;
+  --ds-blue-500: #3b73d9;
+  --ds-blue-700: #244c99;
+  --ds-violet-100: #ebe5fd;
+  --ds-violet-500: #7a5bd6;
+  --ds-violet-700: #513a9c;
+
+  /* Spacing: 4px base */
+  --ds-space-0: 0;
+  --ds-space-1: 4px;
+  --ds-space-2: 8px;
+  --ds-space-3: 12px;
+  --ds-space-4: 16px;
+  --ds-space-5: 20px;
+  --ds-space-6: 24px;
+  --ds-space-8: 32px;
+  --ds-space-10: 40px;
+  --ds-space-12: 48px;
+  --ds-space-16: 64px;
+
+  /* Radius */
+  --ds-radius-sm: 8px;
+  --ds-radius-md: 10px;
+  --ds-radius-lg: 16px;
+  --ds-radius-xl: 22px;
+  --ds-radius-full: 999px;
+
+  /* Typography */
+  --ds-font-sans: 'Nunito Variable', Nunito, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ds-font-display: 'Fraunces Variable', Fraunces, Georgia, 'Times New Roman', serif;
+  --ds-font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --ds-font-size-xs: 12px;
+  --ds-font-size-sm: 13px;
+  --ds-font-size-md: 14px;
+  --ds-font-size-lg: 16px;
+  --ds-font-size-xl: 22px;
+  --ds-font-size-2xl: 30px;
+  --ds-font-size-3xl: 36px;
+
+  --ds-line-height-tight: 1.2;
+  --ds-line-height-normal: 1.5;
+
+  --ds-font-weight-regular: 400;
+  --ds-font-weight-medium: 600;
+  --ds-font-weight-semibold: 700;
+  --ds-font-weight-bold: 800;
+
+  /* Control sizes */
+  --ds-control-height-sm: 28px;
+  --ds-control-height-md: 36px;
+  --ds-control-height-lg: 44px;
+
+  /* Motion */
+  --ds-duration-fast: 120ms;
+  --ds-duration-normal: 200ms;
+  --ds-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Layers */
+  --ds-layer-sticky: 10;
+  --ds-layer-overlay: 100;
+  --ds-layer-toast: 200;
+
+  /* Layout */
+  --ds-content-width: 1120px;
+  --ds-sidebar-width: 232px;
+}
+
+/* Semantic tokens: light theme */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --ds-color-bg: var(--ds-neutral-50);
+  --ds-color-bg-subtle: var(--ds-neutral-100);
+  --ds-color-surface: var(--ds-neutral-0);
+  --ds-color-surface-hover: var(--ds-neutral-100);
+  --ds-color-surface-sunken: var(--ds-neutral-100);
+
+  --ds-color-border: var(--ds-neutral-200);
+  --ds-color-border-strong: var(--ds-neutral-300);
+
+  --ds-color-text: var(--ds-neutral-900);
+  --ds-color-text-muted: var(--ds-neutral-600);
+  --ds-color-text-subtle: var(--ds-neutral-500);
+  --ds-color-text-inverse: var(--ds-neutral-0);
+
+  --ds-color-accent: var(--ds-brand-600);
+  --ds-color-accent-hover: var(--ds-brand-700);
+  --ds-color-accent-soft: var(--ds-brand-50);
+  --ds-color-accent-soft-hover: var(--ds-brand-100);
+  --ds-color-accent-text: var(--ds-brand-700);
+  --ds-color-on-accent: var(--ds-neutral-0);
+  --ds-color-focus: var(--ds-brand-400);
+
+  --ds-color-success: var(--ds-green-500);
+  --ds-color-success-soft: var(--ds-green-100);
+  --ds-color-success-text: var(--ds-green-700);
+
+  --ds-color-warning: var(--ds-amber-500);
+  --ds-color-warning-soft: var(--ds-amber-100);
+  --ds-color-warning-text: var(--ds-amber-700);
+
+  --ds-color-danger: var(--ds-red-500);
+  --ds-color-danger-hover: var(--ds-red-600);
+  --ds-color-danger-soft: var(--ds-red-100);
+  --ds-color-danger-text: var(--ds-red-700);
+
+  --ds-color-info: var(--ds-blue-500);
+  --ds-color-info-soft: var(--ds-blue-100);
+  --ds-color-info-text: var(--ds-blue-700);
+
+  --ds-color-highlight: var(--ds-violet-500);
+  --ds-color-highlight-soft: var(--ds-violet-100);
+  --ds-color-highlight-text: var(--ds-violet-700);
+
+  --ds-color-backdrop: rgba(46, 37, 27, 0.5);
+  --ds-color-paper-speck: var(--ds-neutral-100);
+
+  /* Hard-edged shadows, like a card pinned to a board. */
+  --ds-shadow-sm: 0 2px 0 rgba(70, 57, 42, 0.1);
+  --ds-shadow-md: 0 3px 0 rgba(70, 57, 42, 0.12), 0 10px 20px rgba(70, 57, 42, 0.08);
+  --ds-shadow-lg: 0 4px 0 rgba(70, 57, 42, 0.14), 0 20px 44px rgba(70, 57, 42, 0.18);
+}
+
+/* Semantic tokens: dark theme */
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --ds-color-bg: var(--ds-neutral-950);
+  --ds-color-bg-subtle: var(--ds-neutral-900);
+  --ds-color-surface: var(--ds-neutral-900);
+  --ds-color-surface-hover: var(--ds-neutral-800);
+  --ds-color-surface-sunken: var(--ds-neutral-950);
+
+  --ds-color-border: var(--ds-neutral-800);
+  --ds-color-border-strong: var(--ds-neutral-700);
+
+  --ds-color-text: var(--ds-neutral-100);
+  --ds-color-text-muted: var(--ds-neutral-400);
+  --ds-color-text-subtle: var(--ds-neutral-500);
+  --ds-color-text-inverse: var(--ds-neutral-950);
+
+  --ds-color-accent: var(--ds-brand-400);
+  --ds-color-accent-hover: var(--ds-brand-300);
+  --ds-color-accent-soft: #17301f;
+  --ds-color-accent-soft-hover: #1f3f29;
+  --ds-color-accent-text: var(--ds-brand-300);
+  --ds-color-on-accent: var(--ds-neutral-950);
+  --ds-color-focus: var(--ds-brand-300);
+
+  --ds-color-success: #4cc27a;
+  --ds-color-success-soft: #12301d;
+  --ds-color-success-text: #7fdca2;
+
+  --ds-color-warning: #eeb03c;
+  --ds-color-warning-soft: #37280a;
+  --ds-color-warning-text: #f5cd7c;
+
+  --ds-color-danger: #ee6a60;
+  --ds-color-danger-hover: #f38a82;
+  --ds-color-danger-soft: #3b1613;
+  --ds-color-danger-text: #f6a39c;
+
+  --ds-color-info: #6d9bef;
+  --ds-color-info-soft: #14233f;
+  --ds-color-info-text: #a3c1f7;
+
+  --ds-color-highlight: #a08bea;
+  --ds-color-highlight-soft: #231a45;
+  --ds-color-highlight-text: #c3b5f5;
+
+  --ds-color-backdrop: rgba(0, 0, 0, 0.6);
+  --ds-color-paper-speck: var(--ds-neutral-900);
+
+  --ds-shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.35);
+  --ds-shadow-md: 0 3px 0 rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.35);
+  --ds-shadow-lg: 0 4px 0 rgba(0, 0, 0, 0.45), 0 20px 44px rgba(0, 0, 0, 0.6);
+}

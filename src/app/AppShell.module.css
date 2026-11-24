@@ -1,0 +1,365 @@
+.shell {
+  display: grid;
+  grid-template-columns: var(--ds-sidebar-width) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.skipLink {
+  position: absolute;
+  top: var(--ds-space-2);
+  left: var(--ds-space-2);
+  z-index: var(--ds-layer-overlay);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  background: var(--ds-color-accent);
+  border-radius: var(--ds-radius-md);
+  color: var(--ds-color-on-accent);
+  transform: translateY(-200%);
+}
+
+.skipLink:focus {
+  transform: none;
+}
+
+/* Sidebar */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6);
+  height: 100vh;
+  padding: var(--ds-space-5) var(--ds-space-3);
+  background: var(--ds-color-surface);
+  border-right: 1px solid var(--ds-color-border);
+}
+
+/* A striped shop awning with a scalloped edge. */
+.awning {
+  --stripe: 24px;
+
+  position: relative;
+  flex: none;
+  height: 26px;
+  margin: calc(var(--ds-space-5) * -1) calc(var(--ds-space-3) * -1) var(--ds-space-2);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ds-awning-red) 0 var(--stripe),
+    var(--ds-awning-cream) var(--stripe) calc(var(--stripe) * 2)
+  );
+}
+
+.awning::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  height: 12px;
+  background:
+    radial-gradient(circle at 12px 0, var(--ds-awning-red) 11.5px, transparent 12px) 0 0 / 48px 12px
+      repeat-x,
+    radial-gradient(circle at 12px 0, var(--ds-awning-cream) 11.5px, transparent 12px) 24px 0 / 48px
+      12px repeat-x;
+  filter: drop-shadow(0 2px 0 rgba(70, 57, 42, 0.12));
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  padding: 0 var(--ds-space-2);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brandTagline {
+  color: var(--ds-color-text-subtle);
+  font-size: 11px;
+  font-weight: var(--ds-font-weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.brandMark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--ds-color-accent);
+  border-radius: var(--ds-radius-full);
+  box-shadow: var(--ds-shadow-sm);
+  color: var(--ds-color-on-accent);
+}
+
+.brandMark svg {
+  width: 18px;
+  height: 18px;
+}
+
+.brandName {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-font-size-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  height: var(--ds-control-height-md);
+  padding: 0 var(--ds-space-3);
+  border-radius: var(--ds-radius-md);
+  color: var(--ds-color-text-muted);
+  font-weight: var(--ds-font-weight-medium);
+  transition:
+    background var(--ds-duration-fast) var(--ds-ease-out),
+    color var(--ds-duration-fast) var(--ds-ease-out);
+}
+
+.navLink svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+
+.navLink:hover {
+  background: var(--ds-color-surface-hover);
+  color: var(--ds-color-text);
+}
+
+.navLinkActive,
+.navLinkActive:hover {
+  background: var(--ds-color-accent-soft);
+  box-shadow: inset 3px 0 0 var(--ds-color-accent);
+  color: var(--ds-color-accent-text);
+}
+
+.navLabel {
+  flex: 1;
+}
+
+.navCount {
+  min-width: 20px;
+  padding: 0 6px;
+  background: var(--ds-color-bg-subtle);
+  border-radius: var(--ds-radius-full);
+  color: var(--ds-color-text-muted);
+  font-size: var(--ds-font-size-xs);
+  line-height: 20px;
+  text-align: center;
+}
+
+/* A chalkboard sign, propped a little crooked. */
+.shopSign {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-1);
+  margin-top: auto;
+  padding: var(--ds-space-3) var(--ds-space-4);
+  background: var(--ds-chalkboard);
+  border: 3px solid var(--ds-neutral-400);
+  border-radius: var(--ds-radius-sm);
+  box-shadow: var(--ds-shadow-md);
+  color: var(--ds-chalk);
+  font-size: var(--ds-font-size-xs);
+  transform: rotate(-1.5deg);
+}
+
+.shopSignTitle {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-font-size-lg);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+/* Main column */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--ds-layer-sticky);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-space-4);
+  height: 60px;
+  padding: 0 var(--ds-space-8);
+  background: var(--ds-color-bg);
+  border-bottom: 1px solid var(--ds-color-border);
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+
+.activity {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--ds-color-accent) 40%,
+    var(--ds-color-accent) 60%,
+    transparent
+  );
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity var(--ds-duration-normal) var(--ds-ease-out);
+}
+
+.activityOn {
+  opacity: 1;
+  animation: slide 1.1s linear infinite;
+}
+
+@keyframes slide {
+  from {
+    background-position: -100% 0;
+  }
+
+  to {
+    background-position: 300% 0;
+  }
+}
+
+.cartLink {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--ds-control-height-md);
+  height: var(--ds-control-height-md);
+  border-radius: var(--ds-radius-md);
+  color: var(--ds-color-text-muted);
+}
+
+.cartLink:hover {
+  background: var(--ds-color-surface-hover);
+  color: var(--ds-color-text);
+}
+
+.cartLink svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cartCount {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  min-width: 16px;
+  padding: 0 4px;
+  background: var(--ds-color-accent);
+  border-radius: var(--ds-radius-full);
+  color: var(--ds-color-on-accent);
+  font-size: 10px;
+  font-weight: var(--ds-font-weight-semibold);
+  line-height: 16px;
+  text-align: center;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  height: var(--ds-control-height-md);
+  padding: 0 var(--ds-space-3) 0 var(--ds-space-1);
+  border: 1px solid var(--ds-color-border);
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-surface);
+}
+
+.account:hover {
+  border-color: var(--ds-color-border-strong);
+}
+
+.accountName {
+  font-weight: var(--ds-font-weight-medium);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6);
+  width: 100%;
+  max-width: var(--ds-content-width);
+  margin: 0 auto;
+  padding: var(--ds-space-8);
+}
+
+.fallback {
+  display: grid;
+  place-items: center;
+  min-height: 240px;
+  color: var(--ds-color-text-subtle);
+}
+
+/* Narrow screens: the sidebar becomes a row of links above the content. */
+
+@media (max-width: 860px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--ds-space-3);
+    height: auto;
+    padding: var(--ds-space-2) var(--ds-space-4);
+    border-right: 0;
+    border-bottom: 1px solid var(--ds-color-border);
+    overflow-x: auto;
+  }
+
+  .awning,
+  .brandText,
+  .shopSign,
+  .navLabel,
+  .navCount {
+    display: none;
+  }
+
+  .nav {
+    flex-direction: row;
+  }
+
+  .topbar,
+  .content {
+    padding-right: var(--ds-space-4);
+    padding-left: var(--ds-space-4);
+  }
+
+  .accountName {
+    display: none;
+  }
+
+  .account {
+    padding: 0 var(--ds-space-1);
+  }
+}

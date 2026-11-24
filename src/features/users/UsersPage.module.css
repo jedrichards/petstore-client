@@ -1,0 +1,44 @@
+.lookup {
+  flex: 1;
+  max-width: 420px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  padding: 0 var(--ds-space-3) 0 0;
+  border-bottom: 1px solid var(--ds-color-border);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.rowLink {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--ds-space-3);
+  min-width: 0;
+  padding: var(--ds-space-3) var(--ds-space-5);
+}
+
+.rowLink:hover .rowName {
+  color: var(--ds-color-accent-text);
+}
+
+.rowName {
+  flex: 1;
+  font-weight: var(--ds-font-weight-medium);
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--ds-color-text-subtle);
+}
+
+.note {
+  margin-top: var(--ds-space-3);
+}

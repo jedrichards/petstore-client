@@ -1,0 +1,18 @@
+.identity {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  max-width: 28ch;
+  overflow: hidden;
+  font-weight: var(--ds-font-weight-medium);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.name:hover {
+  color: var(--ds-color-accent-text);
+  text-decoration: underline;
+}

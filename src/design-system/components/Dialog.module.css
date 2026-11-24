@@ -1,0 +1,63 @@
+.dialog {
+  width: calc(100vw - var(--ds-space-8));
+  max-height: calc(100vh - var(--ds-space-8));
+  padding: 0;
+  background: var(--ds-color-surface);
+  border: 1px solid var(--ds-color-border);
+  border-radius: var(--ds-radius-xl);
+  box-shadow: var(--ds-shadow-lg);
+  color: var(--ds-color-text);
+}
+
+.dialog[open] {
+  animation: enter var(--ds-duration-normal) var(--ds-ease-out);
+}
+
+.dialog::backdrop {
+  background: var(--ds-color-backdrop);
+}
+
+.sm {
+  max-width: 420px;
+}
+
+.md {
+  max-width: 560px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ds-space-4);
+  padding: var(--ds-space-5) var(--ds-space-5) 0;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2);
+}
+
+.body {
+  padding: var(--ds-space-4) var(--ds-space-5) 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ds-space-2);
+  padding: var(--ds-space-5);
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}

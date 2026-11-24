@@ -1,0 +1,123 @@
+.button {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--ds-radius-full);
+  font-weight: var(--ds-font-weight-semibold);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background var(--ds-duration-fast) var(--ds-ease-out),
+    border-color var(--ds-duration-fast) var(--ds-ease-out),
+    color var(--ds-duration-fast) var(--ds-ease-out);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* A pressed button sinks onto the counter. */
+.button:active:not(:disabled) {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.button svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+/* Sizes */
+
+.sm {
+  height: var(--ds-control-height-sm);
+  padding: 0 var(--ds-space-2);
+  font-size: var(--ds-font-size-sm);
+}
+
+.md {
+  height: var(--ds-control-height-md);
+  padding: 0 var(--ds-space-4);
+  font-size: var(--ds-font-size-md);
+}
+
+.lg {
+  height: var(--ds-control-height-lg);
+  padding: 0 var(--ds-space-5);
+  font-size: var(--ds-font-size-lg);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.iconOnly {
+  padding: 0;
+}
+
+.iconOnly.sm {
+  width: var(--ds-control-height-sm);
+}
+
+.iconOnly.md {
+  width: var(--ds-control-height-md);
+}
+
+.iconOnly.lg {
+  width: var(--ds-control-height-lg);
+}
+
+/* Variants */
+
+.primary {
+  background: var(--ds-color-accent);
+  color: var(--ds-color-on-accent);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--ds-color-accent-hover);
+}
+
+.secondary {
+  background: var(--ds-color-surface);
+  border-color: var(--ds-color-border-strong);
+  color: var(--ds-color-text);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--ds-color-surface-hover);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--ds-color-text-muted);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--ds-color-surface-hover);
+  color: var(--ds-color-text);
+}
+
+.danger {
+  background: var(--ds-color-danger);
+  color: var(--ds-neutral-0);
+}
+
+.danger:hover:not(:disabled) {
+  background: var(--ds-color-danger-hover);
+}
+
+.pressed,
+.pressed:hover:not(:disabled) {
+  background: var(--ds-color-accent-soft);
+  color: var(--ds-color-accent-text);
+}

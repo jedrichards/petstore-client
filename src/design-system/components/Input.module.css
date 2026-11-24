@@ -1,0 +1,108 @@
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  min-width: 0;
+  padding: 0 var(--ds-space-3);
+  background: var(--ds-color-surface);
+  border: 1px solid var(--ds-color-border-strong);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-shadow-sm);
+  transition:
+    border-color var(--ds-duration-fast) var(--ds-ease-out),
+    box-shadow var(--ds-duration-fast) var(--ds-ease-out);
+}
+
+.control:hover {
+  border-color: var(--ds-color-text-subtle);
+}
+
+.control:focus-within {
+  border-color: var(--ds-color-accent);
+  box-shadow: 0 0 0 3px var(--ds-color-accent-soft-hover);
+}
+
+.control:has([aria-invalid='true']) {
+  border-color: var(--ds-color-danger);
+}
+
+.control:has([aria-invalid='true']):focus-within {
+  box-shadow: 0 0 0 3px var(--ds-color-danger-soft);
+}
+
+.control:has(:disabled) {
+  background: var(--ds-color-bg-subtle);
+  opacity: 0.7;
+}
+
+.sm {
+  height: var(--ds-control-height-sm);
+  padding: 0 var(--ds-space-2);
+  font-size: var(--ds-font-size-sm);
+  border-radius: var(--ds-radius-sm);
+}
+
+.md {
+  height: var(--ds-control-height-md);
+}
+
+.multiline {
+  padding: var(--ds-space-2) var(--ds-space-3);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--ds-color-text);
+}
+
+.input::placeholder {
+  color: var(--ds-color-text-subtle);
+}
+
+textarea.input {
+  resize: vertical;
+  line-height: var(--ds-line-height-normal);
+}
+
+.adornment {
+  display: flex;
+  flex: none;
+  align-items: center;
+  color: var(--ds-color-text-subtle);
+}
+
+.adornment svg {
+  width: 16px;
+  height: 16px;
+}
+
+.select {
+  padding: 0;
+}
+
+.select .input {
+  appearance: none;
+  padding: 0 var(--ds-space-8) 0 var(--ds-space-3);
+  cursor: pointer;
+}
+
+.select.sm .input {
+  padding-left: var(--ds-space-2);
+}
+
+.chevron {
+  position: absolute;
+  right: var(--ds-space-2);
+  width: 16px;
+  height: 16px;
+  color: var(--ds-color-text-subtle);
+  pointer-events: none;
+}

@@ -1,0 +1,94 @@
+.toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-space-3);
+  cursor: pointer;
+}
+
+.toggle:has(:disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: var(--ds-font-size-md);
+  font-weight: var(--ds-font-weight-medium);
+  line-height: 20px;
+}
+
+.description {
+  font-size: var(--ds-font-size-sm);
+  color: var(--ds-color-text-muted);
+}
+
+.input {
+  appearance: none;
+  position: relative;
+  flex: none;
+  margin: 0;
+  background: var(--ds-color-surface);
+  border: 1px solid var(--ds-color-border-strong);
+  cursor: inherit;
+  transition:
+    background var(--ds-duration-fast) var(--ds-ease-out),
+    border-color var(--ds-duration-fast) var(--ds-ease-out);
+}
+
+.input:checked {
+  background: var(--ds-color-accent);
+  border-color: var(--ds-color-accent);
+}
+
+/* Checkbox */
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  border-radius: 5px;
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--ds-color-on-accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Switch */
+
+.switch {
+  width: 34px;
+  height: 20px;
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-border-strong);
+  border-color: transparent;
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-neutral-0);
+  box-shadow: var(--ds-shadow-sm);
+  transition: transform var(--ds-duration-fast) var(--ds-ease-out);
+}
+
+.switch:checked::after {
+  transform: translateX(14px);
+}
